@@ -5,6 +5,7 @@ from rpi_lcd.control import command
 import Adafruit_CharLCD as LCD
 from rpi_lcd.config import lcd16x2
 
+print "beginning the stuff"
 # Initialize the LCD using the pins above.
 lcd = lcd16x2.get_lcd()
 

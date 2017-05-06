@@ -22,14 +22,16 @@ import Adafruit_CharLCD as LCD
 def render_list(display_list, Adafruit_CharLCD):
     lcd = Adafruit_CharLCD
     lcd.clear()
-    cols = Adafruit_CharLCD._cols
+    cols = Adafruit_CharLCD._lines
     message = ""
-    space = " "
+    space = "-"
     pointer = ">"
-    divider = r"\n"
-    for each in display_list[0:cols+1]:
-        message = space+message+divider+each
+    divider = "\n"
+    for each in display_list[0:cols]:
+	print each
+        message = message+space+each+divider
+	print message
     lcd.message(message)
-    lcd.set_cursor(1,1)
+    lcd.set_cursor(0,1)
     lcd.blink(True)
 
