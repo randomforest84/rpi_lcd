@@ -17,7 +17,7 @@ refresh time on changes
 """
 
 import Adafruit_CharLCD as LCD
-
+\x01
 
 def render_list(display_list, Adafruit_CharLCD):
     lcd = Adafruit_CharLCD
@@ -25,11 +25,11 @@ def render_list(display_list, Adafruit_CharLCD):
     cols = Adafruit_CharLCD._lines
     message = ""
     space = "-"
-    pointer = ">"
+    pointer = LCD.createChar(1,[31,19,29,30,29,19,31,31])
     divider = "\n"
     for each in display_list[0:cols]:
 	print each
-        message = message+space+each+divider
+        message = message+pointers+each+divider
 	print message
     lcd.message(message)
     lcd.set_cursor(0,1)
